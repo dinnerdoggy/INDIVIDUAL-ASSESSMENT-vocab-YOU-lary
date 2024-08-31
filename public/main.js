@@ -5,10 +5,11 @@ import '../styles/main.scss';
 
 const init = () => {
   document.querySelector('#app').innerHTML = `
+  <div class="container">
     <h1>Welcome to Vocab-YOU-lary</h1>
-    <button class="btn btn-danger" id="click-me">Login</button><br />
+    <button class="btn btn-danger" id="click-me">Login</button>
+  </div>
   `;
-  console.warn('YOU ARE UP AND RUNNING!');
 
   document
     .querySelector('#click-me')
