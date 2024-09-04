@@ -1,5 +1,4 @@
 import { signIn } from '../utils/auth';
-// import renderToDOM from '../utils/renderToDom';
 
 // GOOGLE LOGIN BUTTON
 const loginButton = () => {
