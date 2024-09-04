@@ -3,6 +3,7 @@ import 'firebase/auth';
 import loginButton from '../components/loginButton';
 import client from './client';
 import startApp from './startApp';
+import removeNavBar from './removeNavBar';
 // import hideDiv from './hideDiv';
 
 const ViewDirectorBasedOnUserAuthStatus = () => {
@@ -14,6 +15,7 @@ const ViewDirectorBasedOnUserAuthStatus = () => {
     } else {
       // person is NOT logged in
       loginButton();
+      removeNavBar();
     }
   });
 };
