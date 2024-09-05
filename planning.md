@@ -1,14 +1,13 @@
-Login page
-Page for cards
-create card page
+x Login page
+x render cards on sign in
 
-click event to login and render cards page
-ERD
-sample data for cards
-upload sample data to firebase
-render the cards on the dom
+x click event to login and render cards page
+x ERD
+x sample data for cards
+x upload sample data to firebase
+x render the cards on the dom
 have filter buttons for language/Tech on top. Don't need to worry about filters just yet though.
-logout button with event.
+x logout button with event.
 add a click event to open create form
 CREATE
         Title

@@ -2,8 +2,9 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
+// GET the data from the database
 const getTech = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}.json`, {
+  fetch(`${endpoint}/.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -12,6 +13,8 @@ const getTech = () => new Promise((resolve, reject) => {
     .then((response) => response.json())
     .then((data) => {
       if (data) {
+        resolve(Object.values(data));
+      } else {
         resolve([]);
       }
     })
