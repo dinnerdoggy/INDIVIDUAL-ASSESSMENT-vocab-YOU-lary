@@ -3,7 +3,7 @@ import renderToDOM from '../utils/renderToDom';
 const viewCards = (array) => {
   let domString = '';
   array.forEach((item) => {
-    domString = `
+    domString += `
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">${item.title}</h5>

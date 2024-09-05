@@ -1,6 +1,5 @@
 Login page
-Page for cards
-create card page
+render cards on sign in
 
 click event to login and render cards page
 ERD
