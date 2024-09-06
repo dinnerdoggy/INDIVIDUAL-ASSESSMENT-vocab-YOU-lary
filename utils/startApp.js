@@ -1,4 +1,5 @@
 import getTech from '../api/vocabData';
+import filterBtns from '../components/filterButtons';
 import logoutButton from '../components/logoutButton';
 import domBuilder from '../components/shared/domBuilder';
 import navBar from '../components/shared/navBar';
@@ -9,6 +10,7 @@ const startApp = () => {
   // clearDom();
   domBuilder();
   navBar();
+  filterBtns();
   logoutButton();
 
   getTech().then((data) => viewCards(data));
