@@ -17,7 +17,7 @@ const filterBtns = () => {
   </div>
   `;
   console.warn('before renderToDom');
-  renderToDOM('#app', domString);
+  renderToDOM('#add-button', domString);
   console.warn('finished');
 };
 
