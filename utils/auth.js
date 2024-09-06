@@ -8,6 +8,7 @@ const signIn = () => {
 
 const signOut = () => {
   firebase.auth().signOut();
+  console.warn('signed out!');
 };
 
 export { signIn, signOut };
