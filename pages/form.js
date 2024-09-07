@@ -20,7 +20,7 @@ const techForm = () => {
     <option>Poop</option>
     </select>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" id="submit-tech" class="btn btn-primary">Submit</button>
 </form>
   `;
   renderToDOM('#form-container', domString);
