@@ -37,7 +37,7 @@ const createTech = (payload) => new Promise((resolve, reject) => {
 
 // Update tech
 const updateTech = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}//${payload.firebaseKey}.json`, {
+  fetch(`${endpoint}/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -45,7 +45,8 @@ const updateTech = (payload) => new Promise((resolve, reject) => {
     body: JSON.stringify(payload),
   })
     .then((response) => response.json())
-    .then(resolve)
+    .then(resolve);
+  console.warn(payload)
     .catch(reject);
 });
 
