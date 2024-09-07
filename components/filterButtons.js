@@ -1,7 +1,7 @@
 import renderToDOM from '../utils/renderToDom';
 
 const filterBtns = () => {
-  console.warn('started');
+  // console.warn('started');
   let domString = '';
   domString += `
   <div class="btn-toolbar flexContainer" role="toolbar" aria-label="Toolbar with button groups">
@@ -16,9 +16,9 @@ const filterBtns = () => {
     </div>
   </div>
   `;
-  console.warn('before renderToDom');
+  // console.warn('before renderToDom');
   renderToDOM('#add-button', domString);
-  console.warn('finished');
+  // console.warn('finished');
 };
 
 export default filterBtns;

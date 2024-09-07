@@ -1,5 +1,5 @@
 const clearDom = () => {
-  document.querySelector('.container').innerHTML = '';
+  document.querySelector('#cards').innerHTML = '';
 };
 
 export default clearDom;
