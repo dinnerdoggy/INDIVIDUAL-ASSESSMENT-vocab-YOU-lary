@@ -21,4 +21,32 @@ const getTech = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export default getTech;
+// Add a tech
+const createTech = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/.json`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+// Update tech
+const updateTech = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}//${payload.firebaseKey}.json`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then(resolve)
+    .catch(reject);
+});
+
+export { createTech, getTech, updateTech };

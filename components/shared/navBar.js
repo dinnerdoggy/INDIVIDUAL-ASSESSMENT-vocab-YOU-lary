@@ -13,7 +13,7 @@ const navBar = () => {
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#" id="all-books">
+              <a class="nav-link" href="#" id="languages">
                 Language <span class="sr-only">(current)</span>
               </a>
             </li>
