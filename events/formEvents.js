@@ -7,6 +7,7 @@ const formEvents = () => {
     e.preventDefault();
     // Click event for submitting tech
     if (e.target.id.includes('techForm')) {
+      console.warn('clicked techFrom for submitting tech');
       const payload = {
         title: document.querySelector('#inputTitle').value,
         definition: document.querySelector('#inputDefinition').value,
@@ -19,6 +20,22 @@ const formEvents = () => {
           clearDom();
           getTech().then(viewCards);
         });
+      });
+    }
+    // Click event for editing a tech
+    if (e.target.id.includes('update-tech')) {
+      console.warn('clicked update-tech');
+      const [, firebaseKey] = e.target.id.split('--');
+      const payload = {
+        title: document.querySelector('#inputTitle').value,
+        definition: document.querySelector('#inputDefinition').value,
+        language: document.querySelector('#techSelect').value,
+        firebaseKey,
+      };
+
+      updateTech(payload).then(() => {
+        clearDom();
+        getTech().then(viewCards);
       });
     }
   });
