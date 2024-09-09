@@ -5,7 +5,7 @@ import domBuilder from '../components/shared/domBuilder';
 import navBar from '../components/shared/navBar';
 import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
-import navEvents from '../events/navigationEvents';
+import { filterEvents, navEvents } from '../events/navigationEvents';
 import viewCards from '../pages/cards';
 // import clearDom from './clearDom';
 
@@ -16,6 +16,7 @@ const startApp = () => {
   formEvents();
   navBar();
   domEvents();
+  filterEvents();
   filterBtns();
   logoutButton();
 
