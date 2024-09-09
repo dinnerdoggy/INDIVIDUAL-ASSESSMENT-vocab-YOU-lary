@@ -45,9 +45,23 @@ const updateTech = (payload) => new Promise((resolve, reject) => {
     body: JSON.stringify(payload),
   })
     .then((response) => response.json())
-    .then(resolve);
-  console.warn(payload)
+    .then(resolve)
     .catch(reject);
 });
 
-export { createTech, getTech, updateTech };
+// Delete Tech
+const deleteTech = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/${firebaseKey}.json`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+export {
+  createTech, getTech, updateTech, deleteTech
+};

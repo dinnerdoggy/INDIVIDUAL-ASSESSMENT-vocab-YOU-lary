@@ -13,7 +13,7 @@ const formEvents = () => {
         language: document.querySelector('#techSelect').value,
       };
       createTech(payload).then(({ name }) => {
-        const patchPayload = { firebaseKay: name };
+        const patchPayload = { firebaseKey: name };
 
         updateTech(patchPayload).then(() => {
           clearDom();

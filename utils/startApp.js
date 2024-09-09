@@ -3,6 +3,7 @@ import filterBtns from '../components/filterButtons';
 import logoutButton from '../components/logoutButton';
 import domBuilder from '../components/shared/domBuilder';
 import navBar from '../components/shared/navBar';
+import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
 import navEvents from '../events/navigationEvents';
 import viewCards from '../pages/cards';
@@ -14,6 +15,7 @@ const startApp = () => {
   navEvents();
   formEvents();
   navBar();
+  domEvents();
   filterBtns();
   logoutButton();
 
