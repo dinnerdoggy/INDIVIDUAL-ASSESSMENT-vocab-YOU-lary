@@ -75,6 +75,42 @@ const deleteTech = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const jsCards = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/.json?orderBy="language"&equalTo="Javascript"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
+const htmlCards = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/.json?orderBy="language"&equalTo="HTML"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
+const cssCards = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/.json?orderBy="language"&equalTo="CSS"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
 export {
-  createTech, getTech, updateTech, deleteTech, getSingleTech
+  createTech, getTech, updateTech, deleteTech, getSingleTech, jsCards, htmlCards, cssCards
 };

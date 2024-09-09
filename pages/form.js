@@ -17,7 +17,9 @@ const techForm = (obj = {}) => {
     <label class="form-label">Language/Tech</label>
     <select class="form-control" id="techSelect" required>
     <option value="">Select a Language/Tech</option>
-    <option>Poop</option>
+    <option>Javascript</option>
+    <option>HTML</option>
+    <option>CSS</option>
     </select>
   </div>
   <button type="submit" id="submit-tech" class="btn btn-primary">Submit</button>
