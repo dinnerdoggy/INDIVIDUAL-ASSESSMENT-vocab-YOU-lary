@@ -10,7 +10,7 @@ const viewCards = (array) => {
             <h6 class="card-subtitle mb-2 text-body-secondary">${item.language}</h6>
             <p class="card-text">${item.definition}</p>
             <a href="#" class="card-link">Edit</a>
-            <a href="#" class="card-link">Delete</a>
+            <a href="#" id="delete-tech--${item.firebaseKey}" class="card-link">Delete</a>
         </div>
     </div>
     `;
