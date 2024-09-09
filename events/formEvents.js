@@ -1,6 +1,9 @@
+import firebase from 'firebase';
 import { createTech, getTech, updateTech } from '../api/vocabData';
 import viewCards from '../pages/cards';
 import clearDom from '../utils/clearDom';
+
+const userID = `${firebase.auth().currentUser.uid}`;
 
 const formEvents = () => {
   document.querySelector('#form-container').addEventListener('submit', (e) => {
@@ -12,13 +15,14 @@ const formEvents = () => {
         title: document.querySelector('#inputTitle').value,
         definition: document.querySelector('#inputDefinition').value,
         language: document.querySelector('#techSelect').value,
+        uid: userID,
       };
       createTech(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
 
         updateTech(patchPayload).then(() => {
           clearDom();
-          getTech().then(viewCards);
+          getTech(userID).then(viewCards);
         });
       });
     }
@@ -30,6 +34,7 @@ const formEvents = () => {
         title: document.querySelector('#inputTitle').value,
         definition: document.querySelector('#inputDefinition').value,
         language: document.querySelector('#techSelect').value,
+        uid: userID,
         firebaseKey,
       };
 
