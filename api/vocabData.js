@@ -2,7 +2,7 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
-// GET the data from the database
+// GET the data from the database "READ"
 const getTech = () => new Promise((resolve, reject) => {
   fetch(`${endpoint}/.json`, {
     method: 'GET',
@@ -21,7 +21,20 @@ const getTech = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// Add a tech
+// Get single tech
+const getSingleTech = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data)) // will resolve a single object
+    .catch(reject);
+});
+
+// Add a tech "CREATE"
 const createTech = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/.json`, {
     method: 'POST',
@@ -35,7 +48,7 @@ const createTech = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// Update tech
+// Update tech "UPDATE"
 const updateTech = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/${payload.firebaseKey}.json`, {
     method: 'PATCH',
@@ -49,7 +62,7 @@ const updateTech = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// Delete Tech
+// Delete Tech "DELETE"
 const deleteTech = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/${firebaseKey}.json`, {
     method: 'DELETE',
@@ -63,5 +76,5 @@ const deleteTech = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 export {
-  createTech, getTech, updateTech, deleteTech
+  createTech, getTech, updateTech, deleteTech, getSingleTech
 };
