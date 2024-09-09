@@ -18,6 +18,7 @@ xCREATE
         user ID - Not on form. Pull from User object.
 x DELETE
 x READ
-UPDATE
-add a click event to open form and edit card
+x UPDATE
+x add a click event to open form and edit card
+User authentication
 Add filter button click events
