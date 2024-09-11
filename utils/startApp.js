@@ -7,20 +7,18 @@ import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
 import { filterEvents, navEvents } from '../events/navigationEvents';
 import viewCards from '../pages/cards';
-// import clearDom from './clearDom';
 
-const startApp = () => {
-  // clearDom();
-  domBuilder();
+const startApp = (user) => {
+  domBuilder(user);
+  formEvents(user);
+  domEvents(user);
   navEvents();
-  formEvents();
   navBar();
-  domEvents();
   filterEvents();
   filterBtns();
   logoutButton();
 
-  getTech().then((data) => viewCards(data));
+  getTech(user.uid).then((data) => viewCards(data));
 };
 
 export default startApp;

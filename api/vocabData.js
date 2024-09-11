@@ -3,8 +3,8 @@ import client from '../utils/client';
 const endpoint = client.databaseURL;
 
 // GET the data from the database "READ"
-const getTech = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/.json`, {
+const getTech = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -75,15 +75,18 @@ const deleteTech = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const jsCards = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/.json?orderBy="language"&equalTo="Javascript"`, {
+const jsCards = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => {
+      const java = Object.values(data).filter((item) => item.language);
+      resolve(java);
+    })
     .catch(reject);
 });
 
