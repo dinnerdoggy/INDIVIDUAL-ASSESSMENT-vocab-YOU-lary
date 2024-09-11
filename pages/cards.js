@@ -11,6 +11,7 @@ const viewCards = (array) => {
             <p class="card-text">${item.definition}</p>
             <a href="#" id="edit-tech-btn--${item.firebaseKey}" class="card-link">Edit</a>
             <a href="#" id="delete-tech--${item.firebaseKey}" class="card-link">Delete</a>
+            <p class="timestamp">${item.time_submitted}</p>
         </div>
     </div>
     `;

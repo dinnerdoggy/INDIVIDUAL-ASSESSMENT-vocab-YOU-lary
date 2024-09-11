@@ -8,11 +8,11 @@ const formEvents = (user) => {
     e.preventDefault();
     // Click event for submitting tech
     if (e.target.id.includes('techForm')) {
-      console.warn('clicked techFrom for submitting tech');
       const payload = {
         title: document.querySelector('#inputTitle').value,
         definition: document.querySelector('#inputDefinition').value,
         language: document.querySelector('#techSelect').value,
+        time_submitted: new Date(),
         uid: `${firebase.auth().currentUser.uid}`
       };
       createTech(payload).then(({ name }) => {
