@@ -1,3 +1,4 @@
+import firebase from 'firebase';
 import {
   cssCards, getTech, htmlCards, jsCards
 } from '../api/vocabData';
@@ -18,22 +19,22 @@ const filterEvents = () => {
   document.querySelector('#add-button').addEventListener('click', (e) => {
     if (e.target.id.includes('jsFilter')) {
       clearDom();
-      jsCards().then(viewCards);
+      jsCards(`${firebase.auth().currentUser.uid}`).then(viewCards);
     }
 
     if (e.target.id.includes('htmlFilter')) {
       clearDom();
-      htmlCards().then(viewCards);
+      htmlCards(`${firebase.auth().currentUser.uid}`).then(viewCards);
     }
 
     if (e.target.id.includes('cssFilter')) {
       clearDom();
-      cssCards().then(viewCards);
+      cssCards(`${firebase.auth().currentUser.uid}`).then(viewCards);
     }
 
     if (e.target.id.includes('allCards')) {
       clearDom();
-      getTech().then(viewCards);
+      getTech(`${firebase.auth().currentUser.uid}`).then(viewCards);
     }
   });
 };

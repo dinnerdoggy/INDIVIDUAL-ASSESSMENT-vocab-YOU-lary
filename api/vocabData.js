@@ -84,33 +84,51 @@ const jsCards = (uid) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const java = Object.values(data).filter((item) => item.language);
-      resolve(java);
+      const java = Object.values(data).filter((item) => item.language === 'Javascript');
+      if (data) {
+        resolve(java);
+      } else {
+        resolve([]);
+      }
     })
     .catch(reject);
 });
 
-const htmlCards = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/.json?orderBy="language"&equalTo="HTML"`, {
+const htmlCards = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => {
+      const java = Object.values(data).filter((item) => item.language === 'HTML');
+      if (data) {
+        resolve(java);
+      } else {
+        resolve([]);
+      }
+    })
     .catch(reject);
 });
 
-const cssCards = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/.json?orderBy="language"&equalTo="CSS"`, {
+const cssCards = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => {
+      const java = Object.values(data).filter((item) => item.language === 'CSS');
+      if (data) {
+        resolve(java);
+      } else {
+        resolve([]);
+      }
+    })
     .catch(reject);
 });
 
