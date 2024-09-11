@@ -5,6 +5,7 @@ import client from './client';
 import startApp from './startApp';
 import removeNavBar from './removeNavBar';
 import clearDom from './clearDom';
+import hideDiv from './hideDiv';
 
 const ViewDirectorBasedOnUserAuthStatus = () => {
   firebase.initializeApp(client);
@@ -17,6 +18,7 @@ const ViewDirectorBasedOnUserAuthStatus = () => {
       loginButton();
       clearDom();
       removeNavBar();
+      hideDiv('.btn-toolbar');
     }
   });
 };

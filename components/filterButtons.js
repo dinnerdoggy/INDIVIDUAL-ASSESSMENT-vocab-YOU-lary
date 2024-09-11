@@ -3,7 +3,7 @@ import renderToDOM from '../utils/renderToDom';
 const filterBtns = () => {
   // console.warn('started');
   let domString = '';
-  domString += `
+  domString = `
   <div class="btn-toolbar flexContainer" role="toolbar" aria-label="Toolbar with button groups">
     <div class="btn-group me-2" role="group" aria-label="First group">
       <button type="button" id="jsFilter" class="btn btn-primary">Javascript</button>
