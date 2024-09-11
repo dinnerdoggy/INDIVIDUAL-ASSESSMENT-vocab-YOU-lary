@@ -1,8 +1,9 @@
+import firebase from 'firebase';
 import { createTech, getTech, updateTech } from '../api/vocabData';
 import viewCards from '../pages/cards';
 import clearDom from '../utils/clearDom';
 
-const formEvents = () => {
+const formEvents = (user) => {
   document.querySelector('#form-container').addEventListener('submit', (e) => {
     e.preventDefault();
     // Click event for submitting tech
@@ -12,13 +13,14 @@ const formEvents = () => {
         title: document.querySelector('#inputTitle').value,
         definition: document.querySelector('#inputDefinition').value,
         language: document.querySelector('#techSelect').value,
+        uid: `${firebase.auth().currentUser.uid}`
       };
       createTech(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
 
         updateTech(patchPayload).then(() => {
           clearDom();
-          getTech().then(viewCards);
+          getTech(user.uid).then(viewCards);
         });
       });
     }
