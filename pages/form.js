@@ -7,11 +7,11 @@ const techForm = (obj = {}) => {
   <form id="${obj.firebaseKey ? `update-tech--${obj.firebaseKey}` : 'techForm'}" class="mb-4">
   <div class="mb-3">
     <label class="form-label">Title</label>
-    <input class="form-control" id="inputTitle" placeholder="Enter Title" value="${obj.title || ''}" required>>
+    <input class="form-control" id="inputTitle" placeholder="Enter Title" value="${obj.title || ''}" required>
   </div>
   <div class="mb-3">
     <label class="form-label">Definition</label>
-    <input class="form-control" id="inputDefinition" placeholder="Enter Definition" value="${obj.definition || ''}" required>>
+    <input class="form-control" id="inputDefinition" placeholder="Enter Definition" value="${obj.definition || ''}" required>
   </div>
   <div class="mb-3">
     <label class="form-label">Language/Tech</label>
