@@ -7,8 +7,10 @@ import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
 import { filterEvents, navEvents } from '../events/navigationEvents';
 import viewCards from '../pages/cards';
+import hideDiv from './hideDiv';
 
 const startApp = (user) => {
+  hideDiv('#login-form-container');
   domBuilder(user);
   formEvents(user);
   domEvents(user);

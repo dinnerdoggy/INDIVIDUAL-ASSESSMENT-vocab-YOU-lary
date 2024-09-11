@@ -1,5 +1,5 @@
 const hideDiv = (divId) => {
-  document.querySelector(divId).style.display = 'none';
+  document.querySelector(divId).innerHTML = '';
 };
 
 export default hideDiv;
